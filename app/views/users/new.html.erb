@@ -9,23 +9,23 @@
       <%= render 'layouts/error_messages', model: f.object %>
     
       <div class="form-group">
-        <%= f.label :name, 'Name' %>
+        <%= f.label :name, 'Name (ユーザ名)' %>
         <%= f.text_field :name, class: 'form-control' %>
       </div>
       
       <div class="form-group">
-        <%= f.label :email, 'Email' %>
+        <%= f.label :email, 'Email (メールアドレス)' %>
         <%= f.email_field :email, class: 'form-control' %>
       </div>
       
       <div class="form-group">
-        <%= f.label :password, 'Password' %>
+        <%= f.label :password, 'Password (パスワード)' %>
         <%= f.password_field :password, class: 'form-control' %>
       </div>
       
       <div class="form-group">
-        <%= f.label :password_confirmation, 'Confirmation' %>
-        <%= f.password_field :password_confirmation, class: 'form_control' %>
+        <%= f.label :password_confirmation, 'Password Confirmation (パスワード確認用）' %>
+        <%= f.password_field :password_confirmation, class: 'form-control' %>
       </div>
       
       <%= f.submit 'Sign Up', class: 'btn btn-primary btn-block' %>
