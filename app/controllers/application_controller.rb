@@ -3,6 +3,11 @@ class ApplicationController < ActionController::Base
   
   include SessionsHelper
   
+  def current_micropost
+    return unless session[:micropost_id]
+    @current_micropost ||= Micropost.find(session[:micropost_id])
+  end
+  
   private
   
   def require_user_logged_in
@@ -12,7 +17,7 @@ class ApplicationController < ActionController::Base
   end
   
   def counts(user)
-    @count_microposts = user.microposts.count
+    @count_likes = user.likes.count
     @count_followings = user.followings.count
     @count_followers = user.followers.count
   end
